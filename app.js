@@ -49,6 +49,11 @@ function reset(){
     mn.style.transform = `rotateZ(${min}deg)`;
     sc.style.transform = `rotateZ(${sec}deg)`;
     ms.style.transform = `rotateZ(${msec}deg)`;
+    if((stspbtn.className).search("fa-pause") != -1){
+        stspbtn.classList.remove("fa-pause");
+        stspbtn.classList.add("fa-play");
+        clearInterval(interval);
+    }
     clearInterval(interval);
 }
 function move(){
