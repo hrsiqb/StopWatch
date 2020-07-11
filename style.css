@@ -1,7 +1,7 @@
 body{
     display: flex;
     min-height: 100vh;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     background-image: url(Images/background.jpg);
     background-size: cover;
@@ -9,6 +9,7 @@ body{
 .flex-container {
   display: flex;
   flex-direction: column;
+  margin-top: 10px;
 }
 .StopWatch{
     width: 350px;
@@ -20,9 +21,36 @@ body{
     background-size: cover;
     border-radius: 50%;
 }
-
 .strstp{
     padding: 4px 12px !important;
+}
+.Laps,.hist{
+    width: 350px;
+    min-height: 30px;
+    display: flex;
+    border-top: 2px solid white;
+    justify-content: center;
+    margin-top: 30px;
+    color: white;
+}
+.Laps{
+    margin-top: 10px;
+}
+.LapVal{
+    max-height: 100px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+h3{
+    display: flex;
+    border-bottom: 2px solid white;
+    width: 350px;
+    justify-content: center;
+}
+h4{
+    display: flex;
+    width: 350px;
+    justify-content: center;
 }
 .lap{
     padding: 7px 6px !important;

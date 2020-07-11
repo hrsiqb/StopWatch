@@ -5,6 +5,11 @@ const dmn = document.getElementById('dmn');
 const dsc = document.getElementById('dsc');
 const dms = document.getElementById('dmsc');
 const stspbtn = document.getElementById('strstp');
+const hist = document.getElementById('hist');
+const lapVal = document.getElementById('LapVal');
+
+var firstRun = 1;
+
 
 var min = 0;
 var sec = 0;
@@ -13,6 +18,7 @@ var dsec = msec;
 var dmin = min;
 var dmsec = sec;
 var interval;
+var lapN = 0;
 
 dmn.value = dmin;
 dsc.value = dsec;
@@ -34,27 +40,46 @@ function StartStop(){
     }
 }
 function lap(){
-    
+    if(!(dmin === 0 && dsec === 0 && dmsec === 0)){
+        lapN++;
+        var h4 = document.createElement("h4");
+        var node = document.createTextNode("LAP-" + lapN + ': ' + dmin + ':' + dsec + ':' + dmsec);
+        h4.appendChild(node);
+        lapVal.appendChild(h4);
+    }
 }
 function reset(){
-    min = 0;
-    sec = 0;
-    msec = 0;
-    dsec = msec;
-    dmin = min;
-    dmsec = sec;
-    dmn.value = dmin;
-    dsc.value = dsec;
-    dms.value = dmsec;
-    mn.style.transform = `rotateZ(${min}deg)`;
-    sc.style.transform = `rotateZ(${sec}deg)`;
-    ms.style.transform = `rotateZ(${msec}deg)`;
-    if((stspbtn.className).search("fa-pause") != -1){
-        stspbtn.classList.remove("fa-pause");
-        stspbtn.classList.add("fa-play");
-        clearInterval(interval);
-    }
     clearInterval(interval);
+    lapVal.innerHTML = "";
+    if(!(dmin === 0 && dsec === 0 && dmsec === 0)){
+        if(firstRun){
+            firstRun=0;
+            var h4 = document.createElement("h4");
+            var node = document.createTextNode(dmin + ':' + dsec + ':' + dmsec);
+            h4.appendChild(node);
+            hist.appendChild(h4);
+        }
+        else{
+            hist.children[1].innerHTML = (dmin + ':' + dsec + ':' + dmsec);
+        }
+        
+        min = 0;
+        sec = 0;
+        msec = 0;
+        dsec = msec;
+        dmin = min;
+        dmsec = sec;
+        dmn.value = dmin;
+        dsc.value = dsec;
+        dms.value = dmsec;
+        mn.style.transform = `rotateZ(${min}deg)`;
+        sc.style.transform = `rotateZ(${sec}deg)`;
+        ms.style.transform = `rotateZ(${msec}deg)`;
+        if((stspbtn.className).search("fa-pause") != -1){
+            stspbtn.classList.remove("fa-pause");
+            stspbtn.classList.add("fa-play");
+        }
+    }
 }
 function move(){
 
