@@ -53,7 +53,7 @@ h4{
     justify-content: center;
 }
 .lap{
-    padding: 7px 6px !important;
+    padding: 8px 6px !important;
 }
 .btn{
     border-radius: 50% !important;
@@ -134,12 +134,12 @@ h4{
 }
 
 .Dmsec{
-    justify-content: right;
+    justify-content: flex-end;
     align-items: flex-end;
     position: absolute;
 }
 .Dmins{
-    justify-content: left;
+    justify-content: flex-start;
     align-items: flex-end;
     position: absolute;
 }
@@ -167,10 +167,10 @@ h4{
     align-items: center;
 }
 .StopWatch .msec{
-    justify-content: left;
+    justify-content: flex-start;
 }
 .StopWatch .mins{
-    justify-content: right;
+    justify-content: flex-end;
 }
 .StopWatch .sec, .sc{
     width: 300px;
@@ -210,11 +210,11 @@ h4{
       /* background: white; */
 }
 
-input::-webkit-outer-spin-button,
+/* input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
+} */
 
 /* Firefox */
 input[type=number] {
