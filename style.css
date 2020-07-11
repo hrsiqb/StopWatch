@@ -16,7 +16,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-image: url(Images/background.jpg); */
     background-image: url(Images/StopWatch.png);
     background-size: cover;
     border-radius: 50%;
@@ -31,6 +30,16 @@ body{
 .btn{
     border-radius: 50% !important;
     color: #07344D;
+}
+.btn:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+.btn:hover{
+    background-color: rgb(224, 220, 220);
+}
+.btn:active{
+    background-color: rgb(192, 187, 187);
 }
 .fa-play{
     padding: 14px 17px !important;
