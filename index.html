@@ -26,21 +26,44 @@
 
 </head>
 <body>
+    <div class="flex-container">
+        <div class="StopWatch">
+            <div class="msec">
+                <div class="ms" id="ms"></div>
+            </div>
+            
+            <div class="mins">
+                <div class="mn" id="mn"></div>
+            </div>
+            
+            <div class="sec">
+                <div class="sc" id="sc"></div>
+            </div>
+            
+            <div class="Dmsec">
+                <input type="number" class="dmsc" id="dmsc" value="00" step=".01">
+            </div>
+            <div class="Dmins">
+                <input type="number" class="dmn" id="dmn" value="00" step=".01">
+            </div>
+            <div class="Dsec">
+                <input type="number" class="dsc" id="dsc" value="00" step=".01">
+            </div>
 
-    <div class="StopWatch">
-        <div class="hours">
-            <div class="hr" id="hr">hr</div>
+            <div class="sem">
+                <div class="semnum" id=""></div>
+                <div class="semsign" id="">:</div>
+                <div class="semnum" id=""></div>
+                <div class="semsign" id="">:</div>
+                <div class="semnum" id=""></div>
+            </div>
         </div>
-        
-        <div class="mins">
-            <div class="mn" id="mn"></div>
-        </div>
-        
-        <div class="secs">
-            <div class="sc" id="sc"></div>
+        <div class="buttons">
+            <button class="btn btn-basic fa fa-play strstp" id="strstp" onclick="StartStop()"></button>
+            <button class="btn btn-basic reset fa fa-repeat" id="reset" onclick="reset()"></button>
+            <button class="btn btn-basic lap" id="lap" onclick="lap()">LAP</button>
         </div>
     </div>
-
     <script src="app.js"></script>
 </body>
 </html>

@@ -6,6 +6,10 @@ body{
     background-image: url(Images/2.jpg);
     background-size: cover;
 }
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
 .StopWatch{
     width: 350px;
     height: 350px;
@@ -15,72 +19,170 @@ body{
     background: #07344D;
     background-image: url(Images/StopWatch.png);
     background-size: cover;
-    /* border: 4px solid rgb(89, 89, 238); */
     border-radius: 50%;
-    /* box-shadow: 0px -15px 15px rgba(255, 255, 255, 0.05),
-                inset 0 -15px 15px rgba(255, 255, 255, 0.05); */
-                /* 0 15px 15px rgba(0, 0, 0, 0.05),
-                inset 0 15px 15px rgba(0, 0, 0, 0.05); */
 }
-/* .StopWatch:before{
-    content: '';
-    height: 15px;
-    width: 15px;
-    border-radius: 50%;
-    background: white;
-    z-index: 11;
+
+.strstp{
+    padding: 4px 12px !important;
+}
+.lap{
+    padding: 7px 6px !important;
+}
+.btn{
+    border-radius: 50% !important;
+    color: teal;
+}
+/* .fa-repeat{
+    padding: 14px 16px !important;
 } */
-.StopWatch .hours,
-.StopWatch .mins,
-.StopWatch .secs{
+.fa-play{
+    padding: 14px 17px !important;
+}
+.fa-repeat,.fa-pause{
+    padding: 14px 16px !important;
+}
+.fa,.btn{
+    margin: 38px !important;
+    font-size: 25px !important;
+}
+.buttons{
+    width: 350px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+.sem{
+    position: absolute;
+    width: 180px;
+    height: 220px;
+    display: flex;    
+    justify-content: center;
+    align-items: flex-end;
     position: absolute;
 }
-.hr,.mn{
+.semnum{
+    width: 60px;
+    height: 70px;
+}
+.semsign{
+    width: 0px;
+    height: 70px;
+    font-size: 40px;
+    color: #AFDAEE;
+    font-weight: lighter;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Dmsec,
+.Dmins,
+.Dsec{
+    position: absolute;
+    width: 180px;
+    height: 220px;
+    display: flex;
+}
+.dmsc,.dmn,.dsc{
+    text-align: center;
+    background: transparent;
+    border: none;
+    width: 60px;
+    height: 70px;
+    font-size: 40px;
+    color: #AFDAEE;
+    font-weight: lighter;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.Dmsec{
+    justify-content: right;
+    align-items: flex-end;
+    position: absolute;
+}
+.Dmins{
+    justify-content: left;
+    align-items: flex-end;
+    position: absolute;
+}
+.Dsec{
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+}
+
+.StopWatch .msec,
+.StopWatch .mins,
+.StopWatch .sec{
+    position: absolute;
+}
+.ms,.mn{
     width: 83px;
     height: 85px;
+    padding-top: 18px;
 }
-.StopWatch .hours,
+.StopWatch .msec,
 .StopWatch .mins{
     width: 220px;
     height: 220px;
     display: flex;
     align-items: center;
 }
-.StopWatch .hours{
+.StopWatch .msec{
     justify-content: left;
 }
 .StopWatch .mins{
     justify-content: right;
 }
-.StopWatch .secs, .sc{
+.StopWatch .sec, .sc{
     width: 300px;
     height: 300px;
 }
-.hr,.mn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.sc{
+.ms,.mn,.sc{
     display: flex;
     justify-content: center;
     position: absolute;
+}
+.ms::before,
+.mn::before{
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 30px;
+    background-image: url(Images/HrMnNeedle.png);
+    background-size: cover;
+    z-index: 10;
 }
 .sc::before{
     content: '';
     position: absolute;
     width: 18px;
     height: 180px;
-  /* width: 0; 
-  height: 0px; 
-  border-left: 5px solid #07344D;
-  border-right: 5px solid #07344D;
-  
-  border-bottom: 150px solid white; */
-    
-    /* background: white; */
     background-image: url(Images/SecNeedle.png);
     background-size: cover;
     z-index: 10;
-    border-radius: 6px 6px 0 0;
+
+    /* width: 0; 
+    height: 0px; 
+    border-left: 5px solid #07344D;
+    border-right: 5px solid #07344D;
+    
+    border-bottom: 150px solid white; */
+      
+      /* background: white; */
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
