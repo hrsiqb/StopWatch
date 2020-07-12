@@ -31,7 +31,7 @@ function StartStop(){
     if((stspbtn.className).search("fa-play") != -1){
         stspbtn.classList.remove("fa-play");
         stspbtn.classList.add("fa-pause");
-        interval = setInterval(move,10);
+        interval = setInterval(move,100);
     }
     else if((stspbtn.className).search("fa-pause") != -1){
         stspbtn.classList.remove("fa-pause");
@@ -83,14 +83,14 @@ function reset(){
 }
 function move(){
 
-    min+=0.001;
-    sec+=0.06;
-    msec+=3.6;
+    min+=0.01;
+    sec+=0.6;
+    msec+=36;
     mn.style.transform = `rotateZ(${min}deg)`;
     sc.style.transform = `rotateZ(${sec}deg)`;
     ms.style.transform = `rotateZ(${msec}deg)`;
 
-    dmsec+=1;
+    dmsec+=10;
     if(dmsec >= 100){
         dmsec = 00;
         dsec++;
