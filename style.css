@@ -88,7 +88,6 @@ h4{
     margin-top: 50px;
 }
 .sem{
-    position: absolute;
     width: 180px;
     height: 220px;
     display: flex;    
@@ -97,7 +96,7 @@ h4{
     position: absolute;
 }
 .semnum{
-    width: 60px;
+    width: 80px;
     height: 70px;
 }
 .semsign{
@@ -114,7 +113,7 @@ h4{
 .Dmins,
 .Dsec{
     position: absolute;
-    width: 180px;
+    width: 200px;
     height: 220px;
     display: flex;
 }
@@ -131,6 +130,7 @@ h4{
     justify-content: center;
     align-items: center;
     position: absolute;
+    margin-left: 10px;
 }
 
 .Dmsec{
