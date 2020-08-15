@@ -11,18 +11,18 @@ const lapVal = document.getElementById('LapVal');
 var firstRun = 1;
 
 
-var min = '0' + 0;
-var sec = '0' + 0;
-var msec = '0' + 0;
+var min = 0;
+var sec = 0;
+var msec = 0;
 var dsec = msec;
 var dmin = min;
 var dmsec = sec;
 var interval;
 var lapN = 0;
 
-dmn.value = dmin;
-dsc.value = dsec;
-dms.value = dmsec;
+dmn.value = '0' + dmin;
+dsc.value = '0' + dsec;
+dms.value = '0' + dmsec;
 mn.style.transform = `rotateZ(${min}deg)`;
 sc.style.transform = `rotateZ(${sec}deg)`;
 ms.style.transform = `rotateZ(${msec}deg)`;
