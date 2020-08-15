@@ -11,9 +11,9 @@ const lapVal = document.getElementById('LapVal');
 var firstRun = 1;
 
 
-var min = 0;
-var sec = 0;
-var msec = 0;
+var min = '0' + 0;
+var sec = '0' + 0;
+var msec = '0' + 0;
 var dsec = msec;
 var dmin = min;
 var dmsec = sec;
@@ -26,6 +26,7 @@ dms.value = dmsec;
 mn.style.transform = `rotateZ(${min}deg)`;
 sc.style.transform = `rotateZ(${sec}deg)`;
 ms.style.transform = `rotateZ(${msec}deg)`;
+
 
 function StartStop(){
     if((stspbtn.className).search("fa-play") != -1){
@@ -69,9 +70,9 @@ function reset(){
         dsec = msec;
         dmin = min;
         dmsec = sec;
-        dmn.value = dmin;
-        dsc.value = dsec;
-        dms.value = dmsec;
+        dmn.value = '0' + dmin;
+        dsc.value = '0' + dsec;
+        dms.value = '0' + dmsec;
         mn.style.transform = `rotateZ(${min}deg)`;
         sc.style.transform = `rotateZ(${sec}deg)`;
         ms.style.transform = `rotateZ(${msec}deg)`;
@@ -100,11 +101,14 @@ function move(){
             if(dmin >= 60){
                 dmin = 00;
             }
-            dmn.value = dmin;
-        }
-        dsc.value = dsec;
+            if(dmin < 10) dmn.value = '0' + dmin
+            else dmn.value = dmin;
+        } 
+        if(dsec < 10) dsc.value = '0' + dsec
+        else dsc.value = dsec;
     }
-    dms.value = dmsec;
+    if(dmsec < 10) dms.value = '0' + dmsec
+    else dms.value = dmsec;
     // console.log(dsec);
     if(min >= 360)min=0;
     if(sec >= 360)sec=0;
