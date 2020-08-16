@@ -42,9 +42,21 @@ function StartStop(){
 }
 function lap(){
     if(!(dmin === 0 && dsec === 0 && dmsec === 0)){
+        var formattedDmin = '';
+        var formattedDsec = '';
+        var formattedDmsec = '';
         lapN++;
         var h4 = document.createElement("h4");
-        var node = document.createTextNode("LAP-" + lapN + ': ' + dmin + ':' + dsec + ':' + dmsec);
+        if(dmin < 10) formattedDmin = '0' + dmin
+        else formattedDmin = dmin
+        
+        if(dsec < 10) formattedDsec = '0' + dsec
+        else formattedDsec = dsec
+        
+        if(dmsec < 10) formattedDmsec = '0' + dmsec
+        else formattedDmsec = dmsec
+        
+        var node = document.createTextNode("LAP-" + lapN + ': ' + formattedDmin + ':' + formattedDsec + ':' + formattedDmsec);
         h4.appendChild(node);
         lapVal.appendChild(h4);
     }
@@ -52,16 +64,29 @@ function lap(){
 function reset(){
     clearInterval(interval);
     lapVal.innerHTML = "";
+    var formattedDmin = '';
+    var formattedDsec = '';
+    var formattedDmsec = '';
+    
+    if(dmin < 10) formattedDmin = '0' + dmin
+    else formattedDmin = dmin
+    
+    if(dsec < 10) formattedDsec = '0' + dsec
+    else formattedDsec = dsec
+    
+    if(dmsec < 10) formattedDmsec = '0' + dmsec
+    else formattedDmsec = dmsec
+    
     if(!(dmin === 0 && dsec === 0 && dmsec === 0)){
         if(firstRun){
             firstRun=0;
             var h4 = document.createElement("h4");
-            var node = document.createTextNode(dmin + ':' + dsec + ':' + dmsec);
+            var node = document.createTextNode(formattedDmin + ':' + formattedDsec + ':' + formattedDmsec);
             h4.appendChild(node);
             hist.appendChild(h4);
         }
         else{
-            hist.children[1].innerHTML = (dmin + ':' + dsec + ':' + dmsec);
+            hist.children[1].innerHTML = (formattedDmin + ':' + formattedDsec + ':' + formattedDmsec);
         }
         
         min = 0;
